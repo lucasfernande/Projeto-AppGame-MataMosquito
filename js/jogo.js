@@ -23,7 +23,7 @@ function criarPosicaoRandomica() {
 	// criando elemento html
 	var mosquito = document.createElement('img') // criando a tag img com js
 	mosquito.src = 'img/mosquito.png' // atribuindo o src e o caminho da imagem
-	mosquito.className = tamanhoAleatorio() // atribuindo a classe 
+	mosquito.className = tamanhoAleatorio() + ' ' + inverteMosquito() // atribuindo as classes
 	mosquito.style.left = posicaoX + 'px' // posicionando randomicamente
 	mosquito.style.top = posicaoY + 'px'
 	mosquito.style.position = 'absolute' // definindo posição absoluta
@@ -32,7 +32,6 @@ function criarPosicaoRandomica() {
 }
 
 // criando tamanho aleatorio para o mosquito
-
 function tamanhoAleatorio() {
 	var classe = Math.floor(Math.random() * 3)
 
@@ -43,5 +42,18 @@ function tamanhoAleatorio() {
 			return 'mosquitoGrande'
 		case 2:
 			return 'mosquitoGigante'
+	}
+}
+
+// inventendo o mosquito 
+
+function inverteMosquito() {
+	var classe = Math.floor(Math.random() * 2)
+
+	switch(classe) {
+		case 0:
+			return 'mosquitoEsquerda'
+		case 1:
+			return 'mosquitoDireita'
 	}
 }
