@@ -1,4 +1,14 @@
-.mosquito {
+.mosquitoNormal {
 	width: 50px;
 	height: 50px;
+}
+
+.mosquitoGrande {
+	width: 75px;
+	height: 75px;
+}
+
+.mosquitoGigante {
+	width: 100px;
+	height: 100px;
 }
