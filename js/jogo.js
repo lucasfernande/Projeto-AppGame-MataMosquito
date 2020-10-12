@@ -12,7 +12,13 @@ function ajustaTamanhoJanela() {
 ajustaTamanhoJanela()
 
 // criando posição randomica para o mosquito
+
 function criarPosicaoRandomica() {
+	// removendo o mosquito anterior
+	if (document.getElementById('mosquito')) {
+		document.getElementById('mosquito').remove()
+	}
+
 	var posicaoX = Math.floor(Math.random() * largura - 75)
 	var posicaoY = Math.floor(Math.random() * altura - 75)
 	// console.log(posicaoX, posicaoY)
@@ -27,6 +33,7 @@ function criarPosicaoRandomica() {
 	mosquito.style.left = posicaoX + 'px' // posicionando randomicamente
 	mosquito.style.top = posicaoY + 'px'
 	mosquito.style.position = 'absolute' // definindo posição absoluta
+	mosquito.id = 'mosquito'
 
 	document.body.appendChild(mosquito) // adicionando um filho para o body
 }
