@@ -2,31 +2,70 @@
 <html>
 
   <head>
-  	<title>Mata Mosquito</title>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/jogo.js"></script>
-	</head>
+    <title>Mata mosquito</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-  <body onresize="ajustaTamanhoJanela()">
-
-    <div class="painel">
-      <div class="vidas">
-        <img id="vida1" src="img/coracao_cheio.png">
-        <img id="vida2" src="img/coracao_cheio.png">
-        <img id="vida3" src="img/coracao_cheio.png">
-      </div>
-
-      <div class="cronometro">
-        Tempo Restante: <span id="tempo-restante"></span>
-      </div>
-    </div>
+    <link rel="stylesheet" type="text/css" href="css/style.css">   
 
     <script>
-      document.getElementById('tempo-restante').innerHTML = tempo
-      setInterval(criarPosicaoRandomica, 1000)
+
+      function iniciar() {
+        var nivel = document.getElementById('nivel').value
+        if (nivel === '') {
+          alert('Selecione um nível para iniciar')
+          return false
+        } 
+        window.location.href = 'jogo.html?' + nivel // encaminhando o parâmetro de dificuldade para o jogo      
+      }
+
     </script> 
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <img src="img/game.png" alt="vitória">
+          </div>
+        </div>
+
+      </div> <!-- fim row img-->
+
+      <div class="row">
+
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <div class="mb-2">
+              <select class="form-control" id="nivel">
+                <option value="">Dificuldade</option>
+                <option value="normal">Normal</option>
+                <option value="dificil">Difícil</option>
+                <option value="impossivel">Impossível</option>
+              </select>
+            </div>         
+          </div>
+        </div>
+
+      </div>  
+
+      <div class="row">
+
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-danger btn-lg" onclick="iniciar()">Jogar</button>          
+          </div>
+
+        </div>
+
+      </div> <!-- fim row reiniciar -->
+
+    </div> <!-- fim container -->
       
-  </body>	
+  </body> 
 
 </html>

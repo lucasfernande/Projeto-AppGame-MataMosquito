@@ -6,6 +6,23 @@ var vidas = 1
 var tempo = 10
 var cronometro = setInterval(cronometro, 1000)
 
+var tempoIntervaloMosquito
+
+var nivel = window.location.search // a função search retorna apenas o que contém após o sinal de interrogação
+nivel = nivel.replace('?', '')
+
+// checando qual foi o nivel escolhido
+
+if (nivel === 'normal') {
+	tempoIntervaloMosquito = 1200
+}
+else if (nivel === 'dificil') {
+	tempoIntervaloMosquito = 1000
+}
+else {
+	tempoIntervaloMosquito = 800
+}
+
 function ajustaTamanhoJanela() {
 	altura = window.innerHeight
 	largura =  window.innerWidth
