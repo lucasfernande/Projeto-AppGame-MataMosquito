@@ -2,6 +2,7 @@
 
 var altura = 0
 var largura = 0
+var vidas = 1
 
 function ajustaTamanhoJanela() {
 	altura = window.innerHeight
@@ -14,9 +15,18 @@ ajustaTamanhoJanela()
 // criando posição randomica para o mosquito
 
 function criarPosicaoRandomica() {
+
 	// removendo o mosquito anterior
 	if (document.getElementById('mosquito')) {
 		document.getElementById('mosquito').remove()
+
+		if (vidas > 3) {
+			alert('Game Over')
+		}
+		else {
+			document.getElementById('vida' + vidas).src = 'img/coracao_vazio.png'
+			vidas++
+		}
 	}
 
 	var posicaoX = Math.floor(Math.random() * largura - 75)
@@ -34,6 +44,9 @@ function criarPosicaoRandomica() {
 	mosquito.style.top = posicaoY + 'px'
 	mosquito.style.position = 'absolute' // definindo posição absoluta
 	mosquito.id = 'mosquito'
+	mosquito.onclick = function() {
+		this.remove()
+	}
 
 	document.body.appendChild(mosquito) // adicionando um filho para o body
 }
