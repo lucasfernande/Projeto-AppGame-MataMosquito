@@ -3,6 +3,8 @@
 var altura = 0
 var largura = 0
 var vidas = 1
+var tempo = 10
+var cronometro = setInterval(cronometro, 1000)
 
 function ajustaTamanhoJanela() {
 	altura = window.innerHeight
@@ -11,6 +13,19 @@ function ajustaTamanhoJanela() {
 }
 
 ajustaTamanhoJanela()
+
+// função cronometro 
+function cronometro() {	
+	tempo -= 1
+
+	if (tempo < 0) {
+		clearInterval(cronometro)
+		window.location.href = 'vitoria.html'
+	}
+	else {
+		document.getElementById('tempo-restante').innerHTML = tempo
+	}
+}
 
 // criando posição randomica para o mosquito
 

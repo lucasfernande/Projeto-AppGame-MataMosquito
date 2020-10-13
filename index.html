@@ -18,12 +18,13 @@
       </div>
 
       <div class="cronometro">
-        Tempo Restante: 
+        Tempo Restante: <span id="tempo-restante"></span>
       </div>
     </div>
 
     <script>
-      setInterval(criarPosicaoRandomica, 2000)
+      document.getElementById('tempo-restante').innerHTML = tempo
+      setInterval(criarPosicaoRandomica, 1000)
     </script> 
       
   </body>	
