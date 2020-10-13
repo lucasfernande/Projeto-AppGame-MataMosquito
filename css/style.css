@@ -1,3 +1,9 @@
+body {
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 /* tamanho do mosquito */
 
 .mosquitoNormal {
@@ -23,4 +29,28 @@
 
 .mosquitoDireita{
 	transform: scaleX(-1);
+}
+
+/* painel de vidas e cronometro */
+
+.painel {
+	position: absolute;
+	width: 190px;
+	padding: 10px;
+	bottom: 6px;
+	left: 6px;
+	border-top: 1px solid #fff;
+	border-radius: 10px;
+	background-color: #fff;
+	opacity: 0.7;
+}
+
+.vidas {
+	float: left;
+}
+
+.cronometro {
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
 }
